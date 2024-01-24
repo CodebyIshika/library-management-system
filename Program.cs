@@ -16,7 +16,7 @@ namespace FinalProject
             {
                 try
                 {
-                    Console.WriteLine("\n===== Library Management System =====");
+                    Console.WriteLine("\n=== Library Management System ===");
                     Console.WriteLine("1. Add Book");
                     Console.WriteLine("2. View Books");
                     Console.WriteLine("3. Search Books");
@@ -44,6 +44,16 @@ namespace FinalProject
                             libraryObj.SearchBooks();
                             break;
 
+                        case 4:
+                            Console.Clear();
+                            libraryObj.BorrowBookFromLibrary();
+                            break;
+
+                        case 5:
+                            Console.Clear();
+                            libraryObj.ReturnBookToLibrary();
+                            break;
+
                         case 6:
                             Environment.Exit(0);
                             break;
@@ -55,7 +65,6 @@ namespace FinalProject
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("");
                     Console.WriteLine("Error: Please enter a valid choice.");
                 }
             }
