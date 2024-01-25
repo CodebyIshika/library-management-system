@@ -34,3 +34,29 @@ the library, view the catalog, search for books, borrow, and return books.
 - Checks if the book with the specified ID is currently borrowed.
 - Then displays the message if book  is returned successfully.
 
+## Design Decision
+The application follows a simple console-based design to ensure user-friendly interaction.
+I have used Dictionary<int, Dictionary<string, string>> as the main data structure to store book details and each book is uniquely identified by an ID.
+
+## Challenges Faced
+### Book Availability
+I challenge was to control the borrowing and returning of books to avoid any problems like multiple borrowing. To address this, I have used 'IsBookAvailable' 
+in my codes to keep track of whether a book is available for borrowing by storing the status as "Yes" or "No" in the book details. When a user attempts 
+to borrow a book, the application checks this status to ensure the book is currently available. Similarly, when a user returns a book, the application 
+verifies that the book is marked as borrowed. This straightforward mechanism helps prevent scenarios where a book might be borrowed by multiple users 
+simultaneously or returned when not borrowed at all. 
+
+### Selecting an appropriate Data Structure
+The challenge here was to find a data structure that would allow for efficient storage, retrieval, and modification of book details. To address this, I have used
+nested dictionary within a dictionary. This allows each book  to be uniquely identified by a book ID, and the nested dictionary stores details like title, author, 
+publication year, genre, and book availability. This dictionary makes book information easy to access and update.
+
+## Algorithm Implemented
+This application uses a linear search for searching books by title, author or ID. I had decided to use linear search as it doesn't require the dataset to be sorted.
+- **Search by Title:**
+     - Iterates through the library catalog to find books with a matching title.
+- **Search by Author:**
+     - Checks each book in the catalog to identify those written by the specified author.
+- **Search by ID:**
+     - Checks through the library to locate a book with the given ID.
+
