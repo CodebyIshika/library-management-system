@@ -24,6 +24,7 @@ namespace FinalProject
                     Console.WriteLine("5. Return Book");
                     Console.WriteLine("6. Exit");
 
+                    Console.WriteLine("");
                     Console.Write("Enter your choice (1-6) : ");
                     int userChoice = int.Parse(Console.ReadLine());
 
@@ -69,7 +70,6 @@ namespace FinalProject
                 }
             }
 
-            Console.ReadKey();
         }
     }
 }
